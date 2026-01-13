@@ -1,12 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { About, Contact, Learning, Profiles, Hero, Navbar, Tech, Works, StarsCanvas, Skills, Experience, Education, Projects } from './components'
+import { About, Contact, Learning, Profiles, Hero, Navbar, Tech, Works, StarsCanvas, CustomCursor, Skills, Experience, Education, Projects } from './components'
 import { ThemeProvider } from './components/navbar'
 
 const App = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <div className='relative z-0 bg-primary'>
+          <CustomCursor />
           <Navbar />
           <Routes>
             <Route path="/" element={

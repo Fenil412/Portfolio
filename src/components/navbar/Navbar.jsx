@@ -33,9 +33,13 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(isDark));
     if (isDark) {
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
+      document.body.classList.remove("light");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      document.body.classList.add("light");
     }
   }, [isDark]);
 
@@ -113,18 +117,6 @@ export default function NavBar() {
                 border border-transparent hover:border-cyan-400/30"
               >
                 Resume
-              </a>
-              
-              {/* Progress Report Download */}
-              <a
-                href="/progress-report.pdf"
-                download
-                className="px-3 py-2 rounded-full text-sm font-medium
-                transition-all duration-300 flex items-center
-                hover:bg-white/10 text-gray-300 hover:text-white
-                border border-transparent hover:border-cyan-400/30"
-              >
-                Progress Report
               </a>
               
               {/* Theme Toggle */}
@@ -211,16 +203,6 @@ export default function NavBar() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Download Resume
-                  </a>
-                  <a
-                    href="/progress-report.pdf"
-                    download
-                    className="block w-full px-4 py-3 rounded-lg text-sm font-medium
-                    transition-all duration-300 text-center
-                    bg-teal-600 hover:bg-teal-700 text-white"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Download Progress Report
                   </a>
                 </div>
               </div>

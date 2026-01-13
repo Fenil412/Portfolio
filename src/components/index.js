@@ -11,6 +11,7 @@ import Skills from './skills';
 import Experience from './experience';
 import Education from './education';
 import Projects from './projects';
+import CustomCursor from "./CustomCursor";
 
 export {
   Hero,
@@ -23,6 +24,7 @@ export {
   Contact,
   Skills,
   Experience,
+  CustomCursor,
   Education,
   Projects,
   EarthCanvas,
