@@ -12,7 +12,8 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  cursor: none !important; /* Hide default cursor everywhere */
+  cursor: none !important;
+  /* Hide default cursor everywhere */
 }
 
 /* Light/Dark Mode Variables */
@@ -46,18 +47,31 @@
 }
 
 /* Ensure cursor is hidden on all elements */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   cursor: none !important;
 }
 
 /* Hide cursor on interactive elements */
-a, button, input, textarea, select, canvas, 
-.cursor-pointer, .cursor-hover, .cursor-view {
+a,
+button,
+input,
+textarea,
+select,
+canvas,
+.cursor-pointer,
+.cursor-hover,
+.cursor-view {
   cursor: none !important;
 }
 
 /* Hide cursor on hover states */
-a:hover, button:hover, input:hover, textarea:hover, select:hover {
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+select:hover {
   cursor: none !important;
 }
 
@@ -72,15 +86,19 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) scale(1);
   }
+
   50% {
     transform: translateY(-10px) scale(1.05);
   }
@@ -95,44 +113,35 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       rgba(100, 100, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
+      transparent 1px),
+    linear-gradient(to bottom,
       rgba(100, 100, 255, 0.1) 1px,
-      transparent 1px
-    );
+      transparent 1px);
   background-size: 30px 30px;
 }
 
 .light .bg-grid-pattern {
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       rgba(99, 102, 241, 0.08) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
+      transparent 1px),
+    linear-gradient(to bottom,
       rgba(99, 102, 241, 0.08) 1px,
-      transparent 1px
-    );
+      transparent 1px);
 }
 
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #434343,
+      #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #434343,
+      #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .violet-gradient {
@@ -148,65 +157,61 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 }
 
 .purple-text-gradient {
-  background: #7f00ff; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #7f00ff,
-    #e100ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #7f00ff,
-    #e100ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #7f00ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,
+      #7f00ff,
+      #e100ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #7f00ff,
+      #e100ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #f12711;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,
+      #f12711,
+      #f5af19);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #f12711,
+      #f5af19);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .green-text-gradient {
-  background: #11998e; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #11998e;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,
+      #11998e,
+      #38ef7d);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #11998e,
+      #38ef7d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .yellow-text-gradient {
-  background: #facc15; /* fallback for old browsers (Tailwind's yellow-400) */
-  background: -webkit-linear-gradient(
-    to top,
-    #facc15,
-    #fde047
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #facc15,
-    #fde047
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #facc15;
+  /* fallback for old browsers (Tailwind's yellow-400) */
+  background: -webkit-linear-gradient(to top,
+      #facc15,
+      #fde047);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #facc15,
+      #fde047);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -214,33 +219,31 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 
 .blue-text-gradient {
   /* background: -webkit-linear-gradient(#eee, #333); */
-  background: #56ccf2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,
+      #2f80ed,
+      #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #2f80ed,
+      #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pink-text-gradient {
-  background: #ec008c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ec008c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,
+      #ec008c,
+      #fc6767);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top,
+      #ec008c,
+      #fc6767);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -258,6 +261,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 }
 
 @keyframes mulShdSpin {
+
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em #ffffff,
@@ -269,6 +273,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
   }
+
   12.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
       1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
@@ -278,6 +283,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
   }
+
   25% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
@@ -287,6 +293,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   37.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
@@ -296,6 +303,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   50% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
@@ -305,6 +313,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   62.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
@@ -314,6 +323,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   75% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
@@ -323,6 +333,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff,
       -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
   }
+
   87.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
       1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
@@ -348,7 +359,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(8, 145, 178, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.02) 0%, transparent 50%);
@@ -364,7 +375,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(45deg, transparent 40%, rgba(99, 102, 241, 0.02) 50%, transparent 60%),
     linear-gradient(-45deg, transparent 40%, rgba(8, 145, 178, 0.02) 50%, transparent 60%);
   background-size: 60px 60px;
@@ -446,13 +457,15 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
   border: 1px solid #e2e8f0 !important;
 }
 
-.light input, .light textarea {
+.light input,
+.light textarea {
   background: #ffffff !important;
   color: var(--text-primary) !important;
   border: 2px solid #e2e8f0 !important;
 }
 
-.light input:focus, .light textarea:focus {
+.light input:focus,
+.light textarea:focus {
   border-color: var(--accent-primary) !important;
   background: #ffffff !important;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
@@ -486,7 +499,7 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 
 /* Light mode hero section with professional background */
 .light .bg-hero-pattern {
-  background: 
+  background:
     linear-gradient(135deg, #fafbfc 0%, #f1f5f9 50%, #ffffff 100%),
     radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 70% 30%, rgba(8, 145, 178, 0.05) 0%, transparent 50%);
@@ -554,4 +567,37 @@ a:hover, button:hover, input:hover, textarea:hover, select:hover {
 /* Smooth transitions for theme switching */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Profile Picture Animation */
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  object-fit: cover;
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, #6EE7B7, #3B82F6) border-box;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
 }

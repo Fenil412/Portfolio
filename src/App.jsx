@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { About, Contact, Learning, Profiles, Hero, Navbar, Tech, Works, StarsCanvas, CustomCursor, Skills, Experience, Education, Projects } from './components'
+import { About, Contact, Profiles, Hero, Navbar, Works, StarsCanvas, CustomCursor, Skills, Experience, Education, Projects } from './components'
 import { ThemeProvider } from './components/navbar'
 
 const App = () => {
@@ -17,37 +17,28 @@ const App = () => {
           <Routes>
             <Route path="/" element={
               <>
-                <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-                  <Hero />
-                </div>
+                <Hero />
                 <About />
-                <Learning />
-                <Tech />
-                <Works />
-                <Profiles />
                 <div className="relative z-0">
-                  <Contact />
                   <StarsCanvas />
                 </div>
               </>
             } />
             <Route path="/home" element={
               <>
-                <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-                  <Hero />
-                </div>
+                <Hero />
                 <About />
-                <Learning />
-                <Tech />
-                <Works />
-                <Profiles />
                 <div className="relative z-0">
-                  <Contact />
                   <StarsCanvas />
                 </div>
               </>
             } />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/skills" element={
+              <>
+                <Skills />
+                <Profiles />
+              </>
+            } />
             <Route path="/experience" element={<Experience />} />
             <Route path="/education" element={<Education />} />
             <Route path="/projects" element={<Projects />} />

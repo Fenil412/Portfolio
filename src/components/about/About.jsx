@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../../styles'
 import { services } from '../../constants'
+import { me } from '../../assets'
 import { fadeIn, textVariant } from '../../utils/motion'
 import { SectionWrapper } from '../../hoc'
 
@@ -39,17 +40,32 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+      <div className='flex flex-col xl:flex-row gap-10 mt-12 items-center'>
+        <motion.div
+          variants={fadeIn('right', 'spring', 0.5, 0.75)}
+          className='w-full xl:w-[40%] flex justify-center items-center'
+        >
+          <img
+            src={me}
+            alt='My Profile'
+            className='profile-picture'
+          />
+        </motion.div>
 
-      <motion.p
-        variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I'm a Web Developer with a strong foundation in Data Structures & Algorithms and a growing passion for Artificial Intelligence and Machine Learning. I enjoy building responsive, user-centric web applications using the MERN stack, and I continuously work on improving problem-solving skills through competitive programming. Currently exploring Machine Learning and Deep Learning to understand intelligent systems. Focus remains on disciplined learning, clean code, and impactful technology.
-      </motion.p>
+        <div className='w-full xl:w-[60%] flex flex-col justify-center'>
+          <motion.div variants={textVariant()}>
+            <p className={styles.sectionSubText}>Introduction</p>
+            <h2 className={styles.sectionHeadText}>Overview.</h2>
+          </motion.div>
+
+          <motion.p
+            variants={fadeIn('', '', 0.1, 1)}
+            className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          >
+            I'm a final-year Computer Science student at Nirma University (CGPA: 8.62) with a strong foundation in Data Structures & Algorithms. I have experience as a Web Developer Intern at Zidio Development, where I built scalable applications using the MERN stack. My expertise spans Full-Stack Development, Machine Learning, and Competitive Programming (Knight on LeetCode). I'm passionate about building fast, user-centric web apps and exploring AI-driven solutions.
+          </motion.p>
+        </div>
+      </div>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (

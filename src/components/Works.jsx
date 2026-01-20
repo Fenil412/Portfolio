@@ -3,7 +3,7 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { externallink, github, more_coming_soon } from "../assets";
+import { externallink, github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -108,14 +108,7 @@ const Works = () => {
           </motion.div>
         ))}
 
-        <ProjectCard
-          name="More Coming Soon..."
-          description=""
-          tags={[]}
-          image={more_coming_soon}
-          source_code_link=""
-          live_demo_link=""
-        />
+
       </div>
     </>
   );

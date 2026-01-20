@@ -9,8 +9,8 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.8} groundColor='#1a1a1a' />
-      <ambientLight intensity={0.4} />
+      <hemisphereLight intensity={2.5} groundColor='#1a1a1a' />
+      <ambientLight intensity={0.8} />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.15}
@@ -27,18 +27,18 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={2048}
       />
-      <pointLight intensity={1.5} position={[0, 15, 8]} />
-      <pointLight intensity={0.8} position={[0, -5, -5]} />
-      <directionalLight 
-        intensity={1.2} 
-        position={[10, 10, 5]} 
+      <pointLight intensity={2} position={[0, 15, 8]} />
+      <pointLight intensity={3} position={[0, -5, -5]} />
+      <directionalLight
+        intensity={1.2}
+        position={[10, 10, 5]}
         castShadow
         shadow-mapSize={2048}
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.7 : 1.6}
+        position={isMobile ? [0, -3, -2.2] : [0, -2.9, -2.9]}
         rotation={[-0.01, -0.2, -0.1]}
         castShadow
         receiveShadow
@@ -77,7 +77,7 @@ const ComputersCanvas = () => {
       shadows={{ enabled: true, type: 'soft' }}
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: true,
         shadowMap: { enabled: true, type: 'PCFSoftShadowMap' }
       }}
