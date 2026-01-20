@@ -23,23 +23,23 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!form.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     if (!form.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
       newErrors.email = 'Email is invalid';
     }
-    
+
     if (!form.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (form.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -47,7 +47,7 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setform({ ...form, [name]: value });
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
@@ -56,20 +56,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setLoading(true);
     emailjs.send(
       'service_h4ms0ae',
       'template_6zw6f6v',
       {
         from_name: form.name,
-        to_name: 'Fenil',
+        to_name: 'Fenil Chodvadiya',
         from_email: form.email,
-        to_email: 'fenilchodvadiya@gmail.com',
+        to_email: 'chodvadiyafenil@gmail.com',
         message: form.message,
       },
       'xnyWmkrmoed0PVBti'
@@ -94,8 +94,8 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: "Email",
-      value: "fenilchodvadiya@gmail.com",
-      link: "mailto:fenilchodvadiya@gmail.com"
+      value: "chodvadiyafenil@gmail.com",
+      link: "mailto:chodvadiyafenil@gmail.com"
     },
     {
       icon: FaPhone,
@@ -139,7 +139,7 @@ const Contact = () => {
         <p className={`${styles.sectionSubText} text-center`}>Get in Touch</p>
         <h2 className={`${styles.sectionHeadText} text-center`}>Contact.</h2>
         <p className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto leading-[30px]">
-          Have a project in mind or want to collaborate? I'd love to hear from you. 
+          Have a project in mind or want to collaborate? I'd love to hear from you.
           Let's discuss how we can work together to bring your ideas to life.
         </p>
       </motion.div>
@@ -149,14 +149,14 @@ const Contact = () => {
         <motion.div
           variants={slideIn('left', "tween", 0.2, 1)}
           className="flex-[0.75] bg-black-100 p-8 rounded-2xl border border-gray-800 shadow-2xl">
-          
+
           <form
             ref={formRef}
             onSubmit={handleSubmit}
             className='mt-8 flex flex-col gap-6'>
-            
+
             {/* Name Field */}
-            <motion.label 
+            <motion.label
               variants={fadeIn("up", "spring", 0.1, 0.75)}
               className='flex flex-col'>
               <span className='text-white font-medium mb-4'>Your Name</span>
@@ -166,15 +166,14 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="What's your name?"
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 ${
-                  errors.name ? 'border-red-500' : 'border-transparent'
-                }`}
+                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 ${errors.name ? 'border-red-500' : 'border-transparent'
+                  }`}
               />
               {errors.name && <span className="text-red-500 text-sm mt-1">{errors.name}</span>}
             </motion.label>
 
             {/* Email Field */}
-            <motion.label 
+            <motion.label
               variants={fadeIn("up", "spring", 0.2, 0.75)}
               className='flex flex-col'>
               <span className='text-white font-medium mb-4'>Your Email</span>
@@ -184,15 +183,14 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="What's your email?"
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 ${
-                  errors.email ? 'border-red-500' : 'border-transparent'
-                }`}
+                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 ${errors.email ? 'border-red-500' : 'border-transparent'
+                  }`}
               />
               {errors.email && <span className="text-red-500 text-sm mt-1">{errors.email}</span>}
             </motion.label>
 
             {/* Message Field */}
-            <motion.label 
+            <motion.label
               variants={fadeIn("up", "spring", 0.3, 0.75)}
               className='flex flex-col'>
               <span className='text-white font-medium mb-4'>Your Message</span>
@@ -202,9 +200,8 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="What do you want to say?"
-                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 resize-none ${
-                  errors.message ? 'border-red-500' : 'border-transparent'
-                }`}
+                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium transition-all duration-300 focus:border-cyan-400 resize-none ${errors.message ? 'border-red-500' : 'border-transparent'
+                  }`}
               />
               {errors.message && <span className="text-red-500 text-sm mt-1">{errors.message}</span>}
             </motion.label>
@@ -225,7 +222,7 @@ const Contact = () => {
           </form>
 
           {/* Contact Info */}
-          <motion.div 
+          <motion.div
             variants={fadeIn("up", "spring", 0.5, 0.75)}
             className="mt-12 pt-8 border-t border-gray-700">
             <h4 className="text-white font-semibold text-lg mb-6">Contact Information</h4>
