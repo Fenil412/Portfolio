@@ -1,161 +1,180 @@
 import React from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import 'react-vertical-timeline-component/style.min.css';
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend Developer Intern",
-      company: "Tech Company Name",
-      duration: "Jun 2023 - Aug 2023",
-      location: "Remote",
-      description: "Developed responsive web applications using React.js and collaborated with cross-functional teams to deliver high-quality user interfaces.",
-      responsibilities: [
-        "Built 5+ responsive web components using React.js and Tailwind CSS",
-        "Collaborated with UI/UX designers to implement pixel-perfect designs",
-        "Optimized application performance resulting in 30% faster load times",
-        "Participated in code reviews and maintained clean, documented code"
+      title: "Student Placement Co-ordinator",
+      company_name: "CSE Department Nirma University",
+      iconBg: "#383E56",
+      date: "Jan 2026 - Present",
+      location: "Nirma University · Hybrid",
+      icon: "🎓",
+      points: [
+        "Coordinating placement activities for the CSE Department.",
+        "Facilitating communication between students and recruiters."
       ],
-      technologies: ["React.js", "JavaScript", "Tailwind CSS", "Git", "REST APIs"]
+      skills: ["Leadership", "Management"]
     },
     {
-      title: "Web Development Freelancer",
-      company: "Self-Employed",
-      duration: "Jan 2023 - Present",
-      location: "Remote",
-      description: "Providing web development services to small businesses and startups, creating modern and responsive websites.",
-      responsibilities: [
-        "Delivered 10+ complete website projects for various clients",
-        "Managed project timelines and client communications effectively",
-        "Implemented SEO best practices improving client website rankings",
-        "Provided ongoing maintenance and support for deployed applications"
+      title: "Web Developer Intern",
+      company_name: "Zidio Development",
+      iconBg: "#E6DEDD",
+      date: "May 2025 - Jul 2025",
+      location: "Bengaluru, Karnataka, India · Remote",
+      icon: "💻",
+      points: [
+        "Worked as a Web Developer Intern.",
+        "Gained hands-on experience with the MERN Stack."
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "MongoDB"]
+      skills: ["MERN Stack", "Web Development"]
     },
     {
-      title: "Competitive Programming Enthusiast",
-      company: "Various Platforms",
-      duration: "2022 - Present",
-      location: "Online",
-      description: "Active participant in competitive programming contests with consistent problem-solving practice.",
-      responsibilities: [
-        "Solved 540+ problems across LeetCode, CodeForces, and CodeChef",
-        "Achieved Pupil rating on CodeForces and 3★ on CodeChef",
-        "Participated in weekly contests maintaining consistent performance",
-        "Mentored junior students in data structures and algorithms"
+      title: "Core Committee Member",
+      company_name: "Computer Society of India, Nirma University",
+      iconBg: "#383E56",
+      date: "Feb 2025 - Present",
+      location: "Ahmedabad, Gujarat, India · On-site",
+      icon: "👥",
+      points: [
+        "Serving as a Core Committee Member.",
+        "Previously served as Executive Committee Member (Oct 2024 - Feb 2025)."
       ],
-      technologies: ["C++", "Python", "Data Structures", "Algorithms", "Problem Solving"]
-    }
+      skills: ["Team Leadership", "Event Management"]
+    },
+    {
+      title: "Senior Editor",
+      company_name: "Cyber Security Club Nirma University",
+      iconBg: "#E6DEDD",
+      date: "Nov 2024 - Jul 2025",
+      location: "Ahmedabad, Gujarat, India · On-site",
+      icon: "🛡️",
+      points: [
+        "Responsible for editing duties within the club.",
+        "Served as a Member from Oct 2024 to Nov 2024."
+      ],
+      skills: ["Editing", "Content Management"]
+    },
+    {
+      title: "Member",
+      company_name: "Data Science Club, Nirma University",
+      iconBg: "#383E56",
+      date: "Oct 2024 - Present",
+      location: "Ahmedabad, Gujarat, India · On-site",
+      icon: "📊",
+      points: [
+        "Active member of the Data Science Club.",
+        "Participating in data science related activities and workshops."
+      ],
+      skills: ["Data Science", "Machine Learning"]
+    },
+    {
+      title: "Member",
+      company_name: "CodeAdda - Programming Club, Nirma University",
+      iconBg: "#E6DEDD",
+      date: "Aug 2023 - Present",
+      location: "Ahmedabad, Gujarat, India · On-site",
+      icon: "👾",
+      points: [
+        "Active member of the programming community.",
+        "Participating in coding contests and peer learning sessions."
+      ],
+      skills: ["Competitive Programming", "Algorithms"]
+    },
   ];
 
   return (
-    <section className="min-h-screen bg-primary py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-[#915eff]">Experience</span>
-          </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            My professional journey and hands-on experience in web development and competitive programming.
-          </p>
-        </motion.div>
+    <section className="min-h-screen bg-primary py-20 overflow-hidden relative">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+      </div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#915eff] to-transparent"></div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-16 relative z-10"
+      >
+        <p className="text-gray-400 text-lg uppercase tracking-wider">What I have done so far</p>
+        <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block">
+          Work <span className="text-[#915eff]">Experience.</span>
+          {/* Title Shine Effect */}
+          <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg opacity-0 animate-pulse text-transparent" aria-hidden="true" />
+        </h2>
+      </motion.div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative flex flex-col md:flex-row items-start gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+      <div className="flex flex-col relative z-10">
+        <VerticalTimeline animate={true} lineColor="#915eff">
+          {experiences.map((experience, index) => (
+            <VerticalTimelineElement
+              key={index}
+              className="vertical-timeline-element--work"
+              contentStyle={{ background: 'transparent', boxShadow: 'none', padding: 0 }}
+              contentArrowStyle={{ borderRight: '7px solid  #1d1836' }} // Adjusted arrow color
+              date={experience.date}
+              iconStyle={{ background: experience.iconBg, color: '#fff', boxShadow: '0 0 0 4px #915eff' }}
+              icon={
+                <div className="flex justify-center items-center w-full h-full text-2xl animate-pulse">
+                  {experience.icon}
+                </div>
+              }
+            >
+              <Tilt
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={5}
+                scale={1.02}
+                transitionSpeed={250}
+                className="w-full h-full"
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-[#915eff] rounded-full border-4 border-primary z-10"></div>
+                <div className="relative group bg-[#1d1836] p-6 rounded-xl overflow-hidden border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(145,94,255,0.25)]">
 
-                {/* Content Card */}
-                <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                  <div className="bg-tertiary rounded-2xl p-8 shadow-card border border-gray-700/50 hover:border-[#915eff]/30 transition-colors">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
-                      <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                        <h4 className="text-xl text-[#915eff] mb-2">{exp.company}</h4>
-                        <p className="text-gray-300 mb-4">{exp.description}</p>
-                      </div>
-                      <div className="sm:text-right">
-                        <span className="inline-block bg-[#915eff]/20 text-[#915eff] px-4 py-2 rounded-full text-sm font-medium mb-2">
-                          {exp.duration}
-                        </span>
-                        <p className="text-gray-400 text-sm">{exp.location}</p>
-                      </div>
-                    </div>
+                  {/* Shining Effect Layer */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 z-0" />
 
-                    <div className="mb-6">
-                      <h5 className="text-lg font-semibold text-white mb-3">Key Responsibilities:</h5>
-                      <ul className="space-y-2">
-                        {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-[#915eff] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300">{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  {/* Glassmorphism Glow */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#915eff]/20 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                    <div>
-                      <h5 className="text-lg font-semibold text-white mb-3">Technologies Used:</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-black-200 text-gray-300 rounded-full text-sm border border-gray-700"
-                          >
-                            {tech}
+                  <div className="relative z-10">
+                    <h3 className="text-white text-[24px] font-bold group-hover:text-[#915eff] transition-colors duration-300">{experience.title}</h3>
+                    <p className="text-gray-400 text-[16px] font-semibold" style={{ margin: 0 }}>
+                      {experience.company_name}
+                    </p>
+                    <p className="text-gray-500 text-[12px] mt-1 italic flex items-center gap-1">
+                      <span className="text-[#915eff]">📍</span> {experience.location}
+                    </p>
+
+                    <ul className="mt-5 list-disc ml-5 space-y-2">
+                      {experience.points.map((point, index) => (
+                        <li
+                          key={`experience-point-${index}`}
+                          className="text-white-100 text-[14px] pl-1 tracking-wider"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {experience.skills && (
+                      <div className="mt-4 flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                        {experience.skills.map((skill, idx) => (
+                          <span key={idx} className="text-[12px] bg-gradient-to-r from-[#915eff]/10 to-purple-900/10 text-gray-300 px-2.5 py-1 rounded-md border border-[#915eff]/20 hover:border-[#915eff] hover:text-white transition-all cursor-default">
+                            #{skill}
                           </span>
                         ))}
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-tertiary rounded-2xl p-8 border border-gray-700/50">
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Ready for <span className="text-[#915eff]">New Opportunities</span>
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm actively seeking full-time opportunities where I can contribute my skills in frontend development, 
-              problem-solving, and collaborative teamwork to build amazing products.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="px-6 py-3 bg-[#915eff]/20 text-[#915eff] rounded-full font-medium">
-                Available for Full-time Roles
-              </span>
-              <span className="px-6 py-3 bg-green-500/20 text-green-400 rounded-full font-medium">
-                Open to Remote Work
-              </span>
-            </div>
-          </div>
-        </motion.div>
+              </Tilt>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
       </div>
     </section>
   );

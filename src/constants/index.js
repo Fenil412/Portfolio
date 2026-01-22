@@ -126,7 +126,7 @@ const profiles = [
         testimonial:
             "🍳 3★ Coder | Rating: 1653 | Regularly Participated in weekly contests | Focused on time-efficient problem solving.",
         name: "CodeChef",
-        profile_link: "https://www.codechef.com/users/data_wise_412",
+        profile_link: "https://www.codechef.com/users/sagivian",
 
         image: codechef,
     },

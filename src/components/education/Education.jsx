@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { profiles } from '../../constants';
 import { leetcode, codeforces, codechef, github } from '../../assets';
+import Tilt from 'react-parallax-tilt';
 
 const Education = () => {
   const educationData = [
@@ -45,17 +46,18 @@ const Education = () => {
 
   // Certificate Files from public folder (excluding resume & progress report)
   const certificatesData = [
-    { name: "365 Days of LeetCode", file: "/365_days_leetcode.png", type: "image" },
-    { name: "Adobe Certificate", file: "/Adobe_certificate.pdf", type: "pdf" },
-    { name: "Mine Hackathon 2025", file: "/Mine_Hackthon_2025.pdf", type: "pdf" },
-    { name: "Mined Sprint", file: "/Mined Sprint.pdf", type: "pdf" },
-    { name: "AU Hackathon", file: "/au_hackathon.pdf", type: "pdf" },
-    { name: "EC Council", file: "/ec-council.pdf", type: "pdf" },
-    { name: "Flipkart", file: "/filpcart.pdf", type: "pdf" },
+    { name: "365 Days of LeetCode (2024)", file: "/365_days_leetcode.png", type: "image" },
+    { name: "Adobe Certificate 2025", file: "/Adobe_certificate_page-0001.jpg", type: "image" },
+    { name: "Mine Hackathon 2025", file: "/Mine_Hackthon_2025_page-0001.jpg", type: "image" },
+    { name: "Mined Sprint 2025", file: "/Mined Sprint_page-0001.jpg", type: "image" },
+    { name: "AU Hackathon 2025", file: "/au_hackathon_page-0001.jpg", type: "image" },
+    { name: "EC Council 2024", file: "/ec-council_page-0001.jpg", type: "image" },
+    { name: "Flipkart GRiD 6.0 (2024)", file: "/filpcart_page-0001.jpg", type: "image" },
     { name: "Hackout 2024", file: "/hackout_2024.jpg", type: "image" },
-    { name: "SIH 2024", file: "/sih.pdf", type: "pdf" },
-    { name: "Tata Quiz", file: "/tata_quiz.pdf", type: "pdf" },
-    { name: "Webcube Tech", file: "/webcube tech certificatr.pdf", type: "pdf" }
+    { name: "SIH 2024", file: "/sih_page-0001.jpg", type: "image" },
+    { name: "TATA Crucible Campus Quiz 2024", file: "/TATA Crucible Campus Quiz 2024.jpg", type: "image" },
+    { name: "TATA Crucible Campus Quiz 2025", file: "/TATA Crucible Campus Quiz 2025.jpg", type: "image" },
+    { name: "Webcube Tech (2024)", file: "/webcube tech certificatr_page-0001.jpg", type: "image" }
   ];
 
   // Specific Profiles map
@@ -233,34 +235,94 @@ const Education = () => {
           </div>
 
           {/* Certificates Grid */}
-          <h4 className="text-2xl font-bold text-white mb-8 pl-4 border-l-4 border-[#915eff]">EARNED CERTIFICATIONS</h4>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {certificatesData.map((cert, index) => (
-              <a
-                key={index}
-                href={cert.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block bg-[#151030] rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(145,94,255,0.3)] transition-all duration-300 border border-white/5 hover:border-[#915eff]/50"
-              >
-                <div className="h-32 w-full bg-gray-800/50 flex items-center justify-center group-hover:bg-gray-800/30 transition-colors">
-                  {cert.type === "image" ? (
-                    <img src={cert.file} alt={cert.name} className="h-full w-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
-                  ) : (
-                    <span className="text-4xl">📄</span>
-                  )}
-                </div>
-                <div className="p-4">
-                  <h5 className="text-white text-sm font-semibold truncate" title={cert.name}>{cert.name}</h5>
-                  <p className="text-xs text-gray-500 mt-1 uppercase tracking-wider">{cert.type}</p>
-                </div>
+          <motion.div
+            className="mt-16"
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <h4 className="text-3xl font-bold text-white mb-10 pl-6 border-l-8 border-[#915eff] inline-block shadow-[0_4px_20px_rgba(145,94,255,0.3)] bg-black/20 py-2 pr-6 rounded-r-full">
+              EARNED CERTIFICATIONS
+            </h4>
 
-                <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-white text-xs">↗</span>
-                </div>
-              </a>
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {certificatesData.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
+                  }}
+                >
+                  <Tilt
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
+                    scale={1.05}
+                    transitionSpeed={450}
+                    className="h-full"
+                  >
+                    <a
+                      href={cert.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative block h-full bg-gradient-to-br from-[#151030]/90 to-[#1e1645]/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 shadow-xl hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] transition-all duration-300"
+                    >
+                      {/* Image Container with Overlay */}
+                      <div className="relative h-48 w-full overflow-hidden">
+                        <div className="absolute inset-0 bg-[#915eff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px]">
+                          <span className="bg-black/80 text-white px-4 py-2 rounded-full text-sm font-bold tracking-wider transform scale-0 group-hover:scale-100 transition-transform duration-300 border border-[#915eff]">
+                            VIEW CERTIFICATE
+                          </span>
+                        </div>
+
+                        {cert.type === "image" ? (
+                          <img
+                            src={cert.file}
+                            alt={cert.name}
+                            className="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center bg-[#151030]">
+                            <span className="text-6xl animate-bounce">📄</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-6 relative z-20">
+                        {/* Decorative line */}
+                        <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-[#915eff]/50 to-transparent" />
+
+                        <h5 className="text-white text-lg font-bold mb-2 line-clamp-1 group-hover:text-[#915eff] transition-colors" title={cert.name}>
+                          {cert.name}
+                        </h5>
+                        <div className="flex justify-between items-center">
+                          <span className="text-xs font-medium px-2 py-1 rounded bg-white/5 text-gray-400 border border-white/5 group-hover:border-[#915eff]/30 group-hover:text-gray-300 transition-all uppercase tracking-wider">
+                            {cert.type}
+                          </span>
+                          <span className="text-[#915eff] transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                            ➜
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Glowing Corner Effect */}
+                      <div className="absolute -inset-1 bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500 -z-10" />
+                    </a>
+                  </Tilt>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
         </motion.div>
       </div>
