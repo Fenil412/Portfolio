@@ -15,6 +15,8 @@ import worldwise from './worldwise.png'
 import codeforces from './codeforces.jpg'
 import codechef from './codechef.png'
 import leetcode from './leetcode.png'
+import kaggle from './kaggle.png'
+import new_link from './new_link.png'
 
 
 import me from './ME_Image.jpeg'
@@ -39,5 +41,7 @@ export {
   codeforces,
   codechef,
   leetcode,
+  kaggle,
+  new_link,
 
 };

@@ -3,7 +3,7 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { externallink, github } from "../assets";
+import { externallink, github, new_link } from "../assets";
 import { projects } from "../constants";
 import { fadeIn } from "../utils/motion";
 
@@ -54,17 +54,38 @@ const ProjectCard = ({
             )}
 
             {live_demo_link && (
-              <div
-                onClick={() => window.open(live_demo_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transform hover:scale-110 transition-transform border border-white/10 hover:border-[#915eff] group/icon"
-                title="Live Demo"
-              >
-                <img
-                  src={externallink}
-                  alt="live demo"
-                  className="w-1/2 h-1/2 object-contain opacity-80 group-hover/icon:opacity-100 transition-opacity"
-                />
-              </div>
+              Array.isArray(live_demo_link) ? (
+                live_demo_link.map((link, i) => {
+                  const url = typeof link === 'object' ? link.url : link;
+                  const title = typeof link === 'object' ? link.title : `Live Demo ${i + 1}`;
+                  return (
+                    <div
+                      key={i}
+                      onClick={() => window.open(url, "_blank")}
+                      className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transform hover:scale-110 transition-transform border border-white/10 hover:border-[#915eff] group/icon"
+                      title={title}
+                    >
+                      <img
+                        src={new_link}
+                        alt="live demo"
+                        className="w-1/2 h-1/2 object-contain opacity-80 group-hover/icon:opacity-100 transition-opacity"
+                      />
+                    </div>
+                  );
+                })
+              ) : (
+                <div
+                  onClick={() => window.open(live_demo_link, "_blank")}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transform hover:scale-110 transition-transform border border-white/10 hover:border-[#915eff] group/icon"
+                  title="Live Demo"
+                >
+                  <img
+                    src={new_link}
+                    alt="live demo"
+                    className="w-1/2 h-1/2 object-contain opacity-80 group-hover/icon:opacity-100 transition-opacity"
+                  />
+                </div>
+              )
             )}
           </div>
         </div>

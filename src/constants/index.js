@@ -2,13 +2,11 @@
 import {
     ml,
     web,
-    vue_jobs,
-    usePopcorn,
-    coffeeproject,
-    worldwise,
+    // coffeeproject, usePopcorn, vue_jobs, and worldwise removed (using public assets)
     codeforces,
     codechef,
     dsa,
+    kaggle,
 } from "../assets";
 
 export const navLinks = [
@@ -71,6 +69,14 @@ const profiles = [
 
         image: codechef,
     },
+    {
+        testimonial:
+            "📊 Datasets & Notebooks | Active Contributor | Exploring Machine Learning models and data visualization techniques.",
+        name: "Kaggle",
+        profile_link: "https://www.kaggle.com/fenilchodvadiya",
+
+        image: kaggle,
+    },
 ];
 
 const projects = [
@@ -96,9 +102,9 @@ const projects = [
                 color: "orange-text-gradient",
             },
         ],
-        image: coffeeproject, // Placeholder: Conceptually complex
+        image: "/Financial Chatbot.png",
         source_code_link: "https://github.com/Fenil412/Financial-ChatBot",
-        live_demo_link: "", // No live link provided
+        live_demo_link: "https://financial-chat-bot-yqpz.vercel.app/",
     },
     {
         name: "SmartBite - AI Meal Planner",
@@ -122,9 +128,12 @@ const projects = [
                 color: "orange-text-gradient",
             },
         ],
-        image: usePopcorn, // Placeholder: Food related
+        image: "/SmartBite.png",
         source_code_link: "https://github.com/Fenil412/SmartBite",
-        live_demo_link: "",
+        live_demo_link: [
+            { url: "https://mealgenerator.me", title: "Meal Generator Live" },
+            { url: "https://financial-chat-bot-yqpz.vercel.app/", title: "Financial Chatbot (Integrated)" }
+        ],
     },
     {
         name: "Smart Route Optimization",
@@ -148,9 +157,109 @@ const projects = [
                 color: "yellow-text-gradient",
             },
         ],
-        image: worldwise, // Placeholder: Map related
+        image: "/Smart Route Optimizer.png",
         source_code_link: "https://github.com/Fenil412/Mined_Hackathon_2025",
-        live_demo_link: "",
+        live_demo_link: "https://mined-hackathon-2025.vercel.app/",
+    },
+    {
+        name: "Strongly Connected Components",
+        description:
+            "A visualizer for efficiently finding Strongly Connected Components in directed graphs using Kosaraju’s, Tarjan’s, and Gabow’s algorithms. Features real-time traversal and interactive graph manipulation.",
+        tags: [
+            {
+                name: "Cytoscape.js",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Algorithm Visualization",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Graph Theory",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: "Strongly Connected Components.png",
+        source_code_link: "https://github.com/Fenil412/Strongly-Connected-Components-Detection",
+        live_demo_link: "https://strongly-connected-components-detec.vercel.app/",
+    },
+    {
+        name: "Wine Quality Prediction",
+        description:
+            "Machine Learning project utilizing Exploratory Data Analysis (EDA) and algorithms like Logistic Regression and Random Forest to predict wine quality with high accuracy.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Scikit-Learn",
+                color: "green-text-gradient",
+            },
+            {
+                name: "EDA",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Pandas",
+                color: "yellow-text-gradient",
+            },
+        ],
+        image: "/Wine Quality Prediction.png",
+        source_code_link: "https://github.com/Fenil412/Wine-Quality-Prediction-Using-Machine-Learning",
+        live_demo_link: "https://www.kaggle.com/code/fenilchodvadiya/wine-quality-prediction-using-machine-learning",
+    },
+    {
+        name: "Signal Processing System",
+        description:
+            "Interactive web application for signal generation and analysis. Features customizable waveforms, noise simulation, and Fourier Analysis (FFT/IFFT) with real-time charting.",
+        tags: [
+            {
+                name: "JavaScript",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Signal Processing",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Chart.js",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "FFT",
+                color: "orange-text-gradient",
+            },
+        ],
+        image: "/Signal Processing System.png",
+        source_code_link: "https://github.com/Fenil412/Signal-Processing-System",
+        live_demo_link: "https://signal-processing-system.vercel.app/",
+    },
+    {
+        name: "CPU Scheduling Algorithm",
+        description:
+            "A seamless visualization tool for CPU scheduling algorithms like FCFS, SJF, SRTN, and Round Robin. Displays real-time calculations and animated Gantt charts.",
+        tags: [
+            {
+                name: "JavaScript",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "D3.js",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Operating Systems",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Tailwind CSS",
+                color: "blue-text-gradient",
+            },
+        ],
+        image: "/CPU Scheduling Algorithms.png",
+        source_code_link: "https://github.com/Fenil412/CPU-Scheduling-Algorithm",
+        live_demo_link: "https://cpu-scheduling-algorithm-bay.vercel.app/",
     },
     {
         name: "Email System",
@@ -170,9 +279,35 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: vue_jobs, // Placeholder: Generic works
+        image: "/vue_jobs.png",
         source_code_link: "https://github.com/Fenil412/Email_System",
         live_demo_link: "",
+    },
+    {
+        name: "Plant Diseases Detection",
+        description:
+            "Deep Learning model using Convolutional Neural Networks (CNN) to detect and classify plant diseases from leaf images. Helps in early diagnosis and crop protection.",
+        tags: [
+            {
+                name: "Deep Learning",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "TensorFlow",
+                color: "green-text-gradient",
+            },
+            {
+                name: "CNN",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Computer Vision",
+                color: "orange-text-gradient",
+            },
+        ],
+        image: "/Plant Diseases Detection.png",
+        source_code_link: "",
+        live_demo_link: "https://www.kaggle.com/code/fenilchodvadiya/plant-diseases-detection-using-deep-learning",
     },
 ];
 

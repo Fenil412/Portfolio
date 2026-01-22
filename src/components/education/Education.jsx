@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { profiles } from '../../constants';
 import { leetcode, codeforces, codechef, github } from '../../assets';
 import Tilt from 'react-parallax-tilt';
+import { FaKaggle, FaCode } from 'react-icons/fa';
 
 const Education = () => {
   const educationData = [
@@ -86,6 +87,22 @@ const Education = () => {
       icon: github,
       color: "from-gray-700 to-black",
       description: "Active Open Source Contributor | 500+ Contributions in last year"
+    },
+    {
+      title: "Data Science & Competitions",
+      platform: "Kaggle",
+      link: "https://www.kaggle.com/fenilchodvadiya",
+      iconComponent: FaKaggle,
+      color: "from-blue-600 to-blue-400",
+      description: "Active Participant in Data Science Competitions | Exploring Datasets & Models"
+    },
+    {
+      title: "Coding Portfolio",
+      platform: "Codolio",
+      link: "https://codolio.com/profile/Fenil412",
+      iconComponent: FaCode,
+      color: "from-purple-600 to-indigo-600",
+      description: "Comprehensive Coding Profile | Tracking Progress Across All Platforms"
     }
   ];
 
@@ -199,7 +216,11 @@ const Education = () => {
                 <div className={`absolute inset-0 bg-gradient-to-r ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 <div className="relative bg-[#151030] h-full p-6 rounded-2xl flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 p-2 group-hover:bg-white/20 transition-colors">
-                    <img src={profile.icon || github} alt={profile.platform || "Platform"} className="w-full h-full object-contain" />
+                    {profile.iconComponent ? (
+                      <profile.iconComponent className="w-8 h-8 text-white" />
+                    ) : (
+                      <img src={profile.icon || github} alt={profile.platform || "Platform"} className="w-full h-full object-contain" />
+                    )}
                   </div>
 
                   <h4 className="text-xl font-bold text-white mb-2">{profile.title}</h4>

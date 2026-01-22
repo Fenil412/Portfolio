@@ -22,6 +22,8 @@ import {
   FaMagic,
   FaSearch,
   FaAws,
+  FaKaggle,
+  FaCode,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -174,6 +176,15 @@ const SkillsSection = () => {
         { name: "RAG", icon: <FaSearch className="w-4 h-4 text-blue-400" /> },
         { name: "Generative AI", icon: <FaMagic className="w-4 h-4 text-purple-400" /> },
         { name: "LLM", icon: <SiOpenai className="w-4 h-4 text-green-400" /> },
+      ],
+    },
+    {
+      icon: FaCode,
+      title: "Competitive Platforms",
+      color: "text-orange-400",
+      skills: [
+        { name: "Kaggle", icon: <FaKaggle className="w-4 h-4 text-[#20BEFF]" /> },
+        { name: "Codolio", icon: <FaCode className="w-4 h-4 text-white" /> },
       ],
     },
   ];
