@@ -2,19 +2,13 @@
 import {
     ml,
     web,
-
-
     vue_jobs,
-
-
     usePopcorn,
     coffeeproject,
     worldwise,
     codeforces,
     codechef,
     dsa,
-
-
 } from "../assets";
 
 export const navLinks = [
@@ -50,60 +44,7 @@ const services = [
 
 // technologies array removed
 
-// const experiences = [
-//     {
-//         title: "React.js Developer",
-//         company_name: "Starbucks",
-//         icon: starbucks,
-//         iconBg: "#383E56",
-//         date: "March 2020 - April 2021",
-//         points: [
-//             "Developing and maintaining web applications using React.js and other related technologies.",
-//             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//             "Implementing responsive design and ensuring cross-browser compatibility.",
-//             "Participating in code reviews and providing constructive feedback to other developers.",
-//         ],
-//     },
-//     {
-//         title: "React Native Developer",
-//         company_name: "Tesla",
-//         icon: tesla,
-//         iconBg: "#E6DEDD",
-//         date: "Jan 2021 - Feb 2022",
-//         points: [
-//             "Developing and maintaining web applications using React.js and other related technologies.",
-//             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//             "Implementing responsive design and ensuring cross-browser compatibility.",
-//             "Participating in code reviews and providing constructive feedback to other developers.",
-//         ],
-//     },
-//     {
-//         title: "Web Developer",
-//         company_name: "Shopify",
-//         icon: shopify,
-//         iconBg: "#383E56",
-//         date: "Jan 2022 - Jan 2023",
-//         points: [
-//             "Developing and maintaining web applications using React.js and other related technologies.",
-//             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//             "Implementing responsive design and ensuring cross-browser compatibility.",
-//             "Participating in code reviews and providing constructive feedback to other developers.",
-//         ],
-//     },
-//     {
-//         title: "Full stack Developer",
-//         company_name: "Meta",
-//         icon: meta,
-//         iconBg: "#E6DEDD",
-//         date: "Jan 2023 - Present",
-//         points: [
-//             "Developing and maintaining web applications using React.js and other related technologies.",
-//             "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-//             "Implementing responsive design and ensuring cross-browser compatibility.",
-//             "Participating in code reviews and providing constructive feedback to other developers.",
-//         ],
-//     },
-// ];
+// const experiences = [ ... ] removed/commented out in original
 
 const profiles = [
     {
@@ -134,99 +75,103 @@ const profiles = [
 
 const projects = [
     {
-        name: "Vue Jobs",
+        name: "Financial ChatBot",
         description:
-            "A platform that allows to Create, Read, Update, Delete job listings and manage them. With json-server, the changes remain temporary.",
+            "A full-stack financial chatbot analyzing PDF documents to answer queries using a RAG pipeline (FastAPI, LangChain, FAISS, Gemini API). Supports multi-modal input (text/images) with local-only storage for privacy and zero cloud costs.",
         tags: [
             {
-                name: "vue.js",
-                color: "green-text-gradient",
-            },
-            {
-                name: "json-server",
-                color: "orange-text-gradient",
-            },
-            {
-                name: "tailwind",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: vue_jobs,
-        source_code_link: "https://github.com/samarth3282/vue-jobs",
-        live_demo_link: "https://vuejobsforu.vercel.app/"
-    },
-    {
-        name: "UsePopcorn",
-        description:
-            "Web application that helps users to keep track of their favorite movies and shows. Uses local storage for fast Learning and external APIs for data fetching.",
-        tags: [
-            {
-                name: "react",
+                name: "MERN",
                 color: "blue-text-gradient",
             },
             {
-                name: "omdb api",
-                color: "green-text-gradient", // or "orange-text-gradient" if you want to distinguish API use
+                name: "NLP & RAG",
+                color: "green-text-gradient",
             },
             {
-                name: "localStorage",
-                color: "yellow-text-gradient", // signifies browser-level storage
+                name: "FastAPI",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Generative AI",
+                color: "orange-text-gradient",
             },
         ],
-        image: usePopcorn,
-        source_code_link: "https://github.com/samarthunflagged/usePopcorn",
-        live_demo_link: "https://use-popcorn-web.vercel.app/",
+        image: coffeeproject, // Placeholder: Conceptually complex
+        source_code_link: "https://github.com/Fenil412/Financial-ChatBot",
+        live_demo_link: "", // No live link provided
     },
     {
-        name: "Coffee Project",
+        name: "SmartBite - AI Meal Planner",
         description:
-            "A CSS-intensive website I built during my early days of learning web development. Despite its simplicity, it still holds a special place for me as a proud milestone in my journey.",
+            "AI-powered meal planner generating personalized diet plans using collaborative filtering and XGBoost ranking. Features Flask microservices, JWT authentication, Pulp optimization, and a Groq-powered NLP assistant.",
         tags: [
             {
-                name: "html",
-                color: "orange-text-gradient", // Represents HTML well (standard orange tone)
+                name: "MERN",
+                color: "blue-text-gradient",
             },
             {
-                name: "css",
-                color: "blue-text-gradient", // Blue is commonly associated with CSS
+                name: "ML (XGBoost)",
+                color: "green-text-gradient",
             },
             {
-                name: "javascript",
-                color: "yellow-text-gradient", // Matches JS brand (yellow/amber)
+                name: "Flask",
+                color: "pink-text-gradient",
             },
             {
-                name: "aos",
-                color: "purple-text-gradient", // Represents animation/motion well
+                name: "Groq API",
+                color: "orange-text-gradient",
             },
         ],
-
-
-        image: coffeeproject,
-        source_code_link: "https://github.com/samarthunflagged/coffee-project",
-        live_demo_link: "https://coffee-for-u.vercel.app/",
+        image: usePopcorn, // Placeholder: Food related
+        source_code_link: "https://github.com/Fenil412/SmartBite",
+        live_demo_link: "",
     },
     {
-        name: "WorldWise (under dev)",
+        name: "Smart Route Optimization",
         description:
-            "A travel journal web app built with React and Leaflet that lets you log your journeys and view them on an interactive world map. This was my first real-world project created entirely without a backend.",
+            "Smart navigation tool analyzing traffic and demand to generate optimal routes. Utilizes Folium for interactive map visualization and features data export to Excel.",
         tags: [
             {
-                name: "react",
-                color: "blue-text-gradient", // React is typically represented with blue (React logo color)
+                name: "MERN",
+                color: "blue-text-gradient",
             },
             {
-                name: "leaflet",
-                color: "green-text-gradient", // Leaflet uses green in its branding and is map/Nature related
+                name: "Flask",
+                color: "green-text-gradient",
             },
             {
-                name: "css",
-                color: "pink-text-gradient", // Often styled as light blue or pink in themed UIs
+                name: "Folium",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Data Analysis",
+                color: "yellow-text-gradient",
             },
         ],
-
-
-        image: worldwise,
-        source_code_link: "https://github.com/samarthunflagged/worldwise",
+        image: worldwise, // Placeholder: Map related
+        source_code_link: "https://github.com/Fenil412/Mined_Hackathon_2025",
+        live_demo_link: "",
+    },
+    {
+        name: "Email System",
+        description:
+            "Comprehensive email management system (Inbox, Outbox, Compose) built with Java OOP and file handling. Features efficient read/unread tracking and reliable file-based message storage.",
+        tags: [
+            {
+                name: "Java",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "OOP",
+                color: "green-text-gradient",
+            },
+            {
+                name: "File Handling",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: vue_jobs, // Placeholder: Generic works
+        source_code_link: "https://github.com/Fenil412/Email_System",
         live_demo_link: "",
     },
 ];
