@@ -130,10 +130,7 @@ const projects = [
         ],
         image: "/SmartBite.png",
         source_code_link: "https://github.com/Fenil412/SmartBite",
-        live_demo_link: [
-            { url: "https://mealgenerator.me", title: "Meal Generator Live" },
-            { url: "https://financial-chat-bot-yqpz.vercel.app/", title: "Financial Chatbot (Integrated)" }
-        ],
+        live_demo_link: "https://www.mealgenerator.me/",
     },
     {
         name: "Smart Route Optimization",
@@ -279,7 +276,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "/vue_jobs.png",
+        image: "/email system.jpg",
         source_code_link: "https://github.com/Fenil412/Email_System",
         live_demo_link: "",
     },

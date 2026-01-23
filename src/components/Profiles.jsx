@@ -25,7 +25,7 @@ const ProfileCard = ({
       transitionSpeed={250}
       className="w-full h-full"
     >
-      <div className="w-full h-full bg-[#1d1836] p-10 rounded-3xl relative group overflow-hidden border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(145,94,255,0.25)] flex flex-col justify-between">
+      <div className="w-full h-full bg-tertiary p-10 rounded-3xl relative group overflow-hidden border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-card hover:shadow-[0_0_30px_rgba(145,94,255,0.25)] flex flex-col justify-between">
 
         {/* Shining Effect Layer */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 z-0" />
@@ -35,9 +35,9 @@ const ProfileCard = ({
 
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div>
-            <p className="text-white font-black text-[48px]">"</p>
+            <p className="text-white font-black text-[48px] group-hover:text-[#915eff] transition-colors">"</p>
             <div className="mt-1">
-              <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
+              <p className="text-white tracking-wider text-[18px] font-medium">{testimonial}</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ const Profiles = () => {
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
       <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
+        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px] border border-white/5`}
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>My online profiles</p>

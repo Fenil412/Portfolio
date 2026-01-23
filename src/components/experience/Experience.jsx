@@ -3,6 +3,8 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import 'react-vertical-timeline-component/style.min.css';
+import { styles } from '../../styles';
+import { textVariant } from '../../utils/motion';
 
 const Experience = () => {
   const experiences = [
@@ -87,7 +89,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-primary py-20 overflow-hidden relative">
+    <section className="min-h-screen bg-primary py-20 overflow-hidden relative" id="experience">
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px]" />
@@ -95,10 +97,10 @@ const Experience = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        variants={textVariant()}
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
         className="text-center mb-16 relative z-10"
       >
         <p className="text-gray-400 text-lg uppercase tracking-wider">What I have done so far</p>
@@ -116,7 +118,7 @@ const Experience = () => {
               key={index}
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'transparent', boxShadow: 'none', padding: 0 }}
-              contentArrowStyle={{ borderRight: '7px solid  #1d1836' }} // Adjusted arrow color
+              contentArrowStyle={{ borderRight: '7px solid var(--accent-primary)' }}
               date={experience.date}
               iconStyle={{ background: experience.iconBg, color: '#fff', boxShadow: '0 0 0 4px #915eff' }}
               icon={
@@ -132,7 +134,7 @@ const Experience = () => {
                 transitionSpeed={250}
                 className="w-full h-full"
               >
-                <div className="relative group bg-[#1d1836] p-6 rounded-xl overflow-hidden border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(145,94,255,0.25)]">
+                <div className="relative group bg-tertiary p-6 rounded-xl overflow-hidden border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(145,94,255,0.25)]">
 
                   {/* Shining Effect Layer */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 z-0" />

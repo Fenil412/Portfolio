@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { profiles } from '../../constants';
-import { leetcode, codeforces, codechef, github } from '../../assets';
+import { leetcode, codeforces, codechef, github, cpc } from '../../assets';
 import Tilt from 'react-parallax-tilt';
-import { FaKaggle, FaCode } from 'react-icons/fa';
+import { FaKaggle, FaCode, FaGithub } from 'react-icons/fa'; // Added FaGithub
+import { staggerContainer, fadeIn } from '../../utils/motion';
 
 const Education = () => {
   const educationData = [
@@ -66,7 +67,7 @@ const Education = () => {
     {
       title: "Data Structure and Algorithm",
       platform: "LeetCode",
-      link: "https://leetcode.com/u/Sagivian/", // From constants/index.js (profiles[0])
+      link: "https://leetcode.com/u/Sagivian/",
       icon: leetcode,
       color: "from-yellow-600 to-orange-500",
       description: "Solved ~785 problems | 2058 Rating | Knight Badge"
@@ -77,6 +78,7 @@ const Education = () => {
         { name: "CodeForces", link: "https://codeforces.com/profile/Sagivian", icon: codeforces },
         { name: "CodeChef", link: "https://www.codechef.com/users/sagivian", icon: codechef }
       ],
+      icon: cpc, // Added CPC icon
       color: "from-blue-500 to-cyan-400",
       description: "Rated 'Pupil' (Max 1300) on Codeforces | 3★ Coder (1653) on CodeChef"
     },
@@ -84,7 +86,7 @@ const Education = () => {
       title: "Git & GitHub Mastery",
       platform: "GitHub",
       link: "https://github.com/Fenil412",
-      icon: github,
+      iconComponent: FaGithub, // Changed to Icon Component for better theme support
       color: "from-gray-700 to-black",
       description: "Active Open Source Contributor | 500+ Contributions in last year"
     },
@@ -148,7 +150,7 @@ const Education = () => {
 
                 {/* Content Card */}
                 <div className="w-full md:w-[45%] group perspective-1000">
-                  <div className="relative bg-black-200/40 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(145,94,255,0.1)] hover:-translate-y-2">
+                  <div className="relative bg-tertiary backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-card hover:shadow-[0_0_30px_rgba(145,94,255,0.1)] hover:-translate-y-2">
                     <div className="absolute inset-0 bg-gradient-to-r from-[#915eff]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                     <div className="relative z-10">
@@ -211,11 +213,11 @@ const Education = () => {
             {profilesData.map((profile, index) => (
               <div
                 key={index}
-                className="relative bg-tertiary rounded-2xl p-[1px] overflow-hidden group hover:scale-[1.02] transition-all duration-300"
+                className="relative bg-tertiary rounded-2xl p-[1px] overflow-hidden group hover:scale-[1.02] transition-all duration-300 shadow-card"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                <div className="relative bg-[#151030] h-full p-6 rounded-2xl flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 p-2 group-hover:bg-white/20 transition-colors">
+                <div className="relative bg-tertiary h-full p-6 rounded-2xl flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 dark:bg-white/10 flex items-center justify-center mb-4 p-2 group-hover:bg-primary/20 dark:group-hover:bg-white/20 transition-colors">
                     {profile.iconComponent ? (
                       <profile.iconComponent className="w-8 h-8 text-white" />
                     ) : (
@@ -255,21 +257,12 @@ const Education = () => {
             ))}
           </div>
 
-          {/* Certificates Grid */}
+          {/* Certificates Grid - Staggered Animation to Match Projects */}
           <motion.div
-            className="mt-16"
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
+            variants={staggerContainer(0.3, 0.2)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <h4 className="text-3xl font-bold text-white mb-10 pl-6 border-l-8 border-[#915eff] inline-block shadow-[0_4px_20px_rgba(145,94,255,0.3)] bg-black/20 py-2 pr-6 rounded-r-full">
               EARNED CERTIFICATIONS
@@ -279,10 +272,7 @@ const Education = () => {
               {certificatesData.map((cert, index) => (
                 <motion.div
                   key={index}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
-                  }}
+                  variants={fadeIn("up", "spring", index * 0.5, 1)}
                 >
                   <Tilt
                     tiltMaxAngleX={15}
@@ -295,12 +285,13 @@ const Education = () => {
                       href={cert.file}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative block h-full bg-gradient-to-br from-[#151030]/90 to-[#1e1645]/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 shadow-xl hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] transition-all duration-300"
+                      className="group relative block h-full bg-tertiary dark:bg-gradient-to-br dark:from-[#151030]/90 dark:to-[#1e1645]/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 shadow-card hover:shadow-[0_0_30px_rgba(145,94,255,0.4)] transition-all duration-300"
                     >
                       {/* Image Container with Overlay */}
                       <div className="relative h-48 w-full overflow-hidden">
                         <div className="absolute inset-0 bg-[#915eff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px]">
-                          <span className="bg-black/80 text-white px-4 py-2 rounded-full text-sm font-bold tracking-wider transform scale-0 group-hover:scale-100 transition-transform duration-300 border border-[#915eff]">
+                          {/* UPDATED BUTTON: Light in Light Mode, Dark in Dark Mode */}
+                          <span className="bg-white text-black text-sm font-bold px-4 py-2 rounded-full tracking-wider transform scale-0 group-hover:scale-100 transition-transform duration-300 border border-[#915eff] dark:bg-black/80 dark:text-white shadow-lg">
                             VIEW CERTIFICATE
                           </span>
                         </div>

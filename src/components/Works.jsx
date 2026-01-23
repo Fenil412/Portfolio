@@ -3,9 +3,9 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { externallink, github, new_link } from "../assets";
+import { externallink, github } from "../assets";
 import { projects } from "../constants";
-import { fadeIn } from "../utils/motion";
+import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 
 const ProjectCard = ({
   index,
@@ -17,13 +17,13 @@ const ProjectCard = ({
   live_demo_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 1.25)}>
       <Tilt
         tiltMaxAngleX={12}
         tiltMaxAngleY={12}
         scale={1.03}
         transitionSpeed={450}
-        className="relative bg-black-200/40 backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(145,94,255,0.25)] hover:-translate-y-2 group overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.25)]"
+        className="relative bg-black-200/40 backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_50px_rgba(145,94,255,0.4)] hover:-translate-y-2 group overflow-hidden"
       >
         {/* Shine Effect - Enhanced */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 z-0 pointer-events-none" />
@@ -32,13 +32,16 @@ const ProjectCard = ({
         <div className="absolute -inset-1 bg-gradient-to-r from-[#915eff]/20 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
         <div className="relative w-full h-[230px] z-10 overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 bg-[#915eff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-[2px] pointer-events-none">
+          </div>
+
           <img
             src={image}
             alt="project_image"
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 gap-2 card-img_hover">
+          <div className="absolute inset-0 flex justify-end m-3 gap-2 card-img_hover z-20">
             {source_code_link && (
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
@@ -66,7 +69,7 @@ const ProjectCard = ({
                       title={title}
                     >
                       <img
-                        src={new_link}
+                        src={externallink}
                         alt="live demo"
                         className="w-1/2 h-1/2 object-contain opacity-80 group-hover/icon:opacity-100 transition-opacity"
                       />
@@ -80,7 +83,7 @@ const ProjectCard = ({
                   title="Live Demo"
                 >
                   <img
-                    src={new_link}
+                    src={externallink}
                     alt="live demo"
                     className="w-1/2 h-1/2 object-contain opacity-80 group-hover/icon:opacity-100 transition-opacity"
                   />
@@ -91,7 +94,14 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5 relative z-10">
-          <h3 className="text-white font-bold text-[24px] group-hover:text-[#915eff] transition-colors duration-300">{name}</h3>
+          <h3 className="text-white font-bold text-[24px] group-hover:text-[#915eff] transition-colors duration-300 flex items-center gap-2">
+            {name}
+            {/* Status Pulse Dot */}
+            <span className="flex h-3 w-3 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+          </h3>
           <p className="mt-2 text-secondary text-[14px] leading-relaxed line-clamp-3">{description}</p>
         </div>
 
@@ -115,23 +125,21 @@ const Works = () => {
     <section className="min-h-screen bg-primary py-20 px-4 overflow-hidden relative" id="work">
       {/* Ambient Background - matching Experience section */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-purple-600/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[10%] right-[10%] w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={textVariant()}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-16 relative"
         >
           <p className="text-gray-400 text-lg uppercase tracking-wider">My work</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block">
-            Projects<span className="text-[#915eff]">.</span>
-            {/* Title Shine Effect */}
-            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg opacity-0 animate-pulse text-transparent" aria-hidden="true" />
+          <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block tracking-tight">
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Projects</span>
           </h2>
           <p className="mt-4 text-gray-300 text-[17px] max-w-3xl mx-auto leading-[30px]">
             Following projects showcase my skills and experience through real-world
@@ -141,11 +149,18 @@ const Works = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap gap-7 justify-center">
+        {/* Coordinated Animation Container */}
+        <motion.div
+          variants={staggerContainer(0.3, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          className="flex flex-wrap gap-7 justify-center"
+        >
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
-        </div>
+        </motion.div>
 
         {/* GitHub Profile Link - Enhanced */}
         <motion.div

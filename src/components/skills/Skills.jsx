@@ -3,6 +3,9 @@ import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import IconCloudDemo from "../globe";
 import { Code2, Database, Wrench, Server, Brain } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, fadeIn, textVariant } from "../../utils/motion";
+
 import {
   FaReact,
   FaNodeJs,
@@ -48,34 +51,37 @@ import { TbBrandVscode, TbBrandThreejs } from "react-icons/tb";
 import { AiOutlineApi } from "react-icons/ai";
 import { DiCss3, DiHtml5 } from "react-icons/di";
 
-const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
-    <CardContent className="p-6 relative z-10">
-      <div className="flex items-center gap-4 mb-6">
-        <div
-          className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}>
-          <Icon className="w-8 h-8" />
+const SkillCard = ({ icon: Icon, title, skills, color, index }) => (
+  <motion.div variants={fadeIn("up", "spring", index * 0.1, 0.75)}>
+    <Card className="group relative overflow-hidden bg-tertiary border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 h-full">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
+      <CardContent className="p-6 relative z-10 flex flex-col h-full">
+        <div className="flex items-center gap-4 mb-6">
+          <div
+            className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300 border border-white/5`}>
+            <Icon className="w-8 h-8" />
+          </div>
+          {/* Enhanced Title - Aware of Theme */}
+          <h3 className="text-2xl font-bold text-white group-hover:text-[#915eff] transition-all">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-          {title}
-        </h3>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill, index) => (
-          <Badge
-            key={index}
-            variant="outline"
-            className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20">
-            <span className="transform group-hover/badge:scale-110 transition-transform duration-300">
-              {skill.icon}
-            </span>
-            <span className="font-medium">{skill.name}</span>
-          </Badge>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
+        <div className="flex flex-wrap gap-2 my-auto">
+          {skills.map((skill, index) => (
+            <Badge
+              key={index}
+              variant="outline"
+              className="group/badge relative bg-primary hover:bg-white/10 text-white border-gray-700 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 rounded-md">
+              <span className="transform group-hover/badge:scale-110 transition-transform duration-300">
+                {skill.icon}
+              </span>
+              <span className="font-medium text-xs text-white">{skill.name}</span>
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
 );
 
 const SkillsSection = () => {
@@ -190,23 +196,52 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-24 lg:pt-16 text-white min-h-screen bg-[#04081A] relative">
+    <main className="pt-24 lg:pt-16 text-white min-h-screen bg-primary relative overflow-hidden" id="skills">
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
       <section className="container mx-auto px-4 py-12 relative z-10">
-        <div className="flex justify-center items-center mb-12">
+        <motion.div
+          variants={textVariant()}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-gray-400 text-lg uppercase tracking-wider">My technical expertise</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block">
+            My <span className="text-[#915eff]">Skills.</span>
+            {/* Title Shine Effect */}
+            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg opacity-0 animate-pulse text-transparent" aria-hidden="true" />
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center items-center mb-16"
+        >
           <IconCloudDemo />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </motion.div>
+
+        <motion.div
+          variants={staggerContainer(0.1, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}
+              index={index}
               icon={category.icon}
               title={category.title}
               skills={category.skills}
               color={category.color}
             />
           ))}
-        </div>
+        </motion.div>
       </section>
     </main>
   );

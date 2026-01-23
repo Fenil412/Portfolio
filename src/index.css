@@ -27,13 +27,20 @@
   --accent-secondary: #00cea8;
 }
 
+
 .light {
-  --bg-primary: #fafbfc;
+  --bg-primary: #f8fafc;
+  /* Slate 50 - Soft off-white */
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9;
-  --text-primary: #2d3748;
-  --text-secondary: #718096;
-  --accent-primary: #6366f1;
+  /* pure white */
+  --bg-tertiary: #ffffff;
+  /* White for cards to pop against slate 50 */
+  --text-primary: #0f172a;
+  /* Slate 900 - Deep, legible black */
+  --text-secondary: #475569;
+  /* Slate 600 - Accessible gray */
+  --accent-primary: #7c3aed;
+  /* Violet 600 - Matches dark theme vibe but accessible */
   --accent-secondary: #0891b2;
 }
 
@@ -512,33 +519,101 @@ select:hover {
   box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.05) !important;
 }
 
-/* Light mode terminal with professional colors */
-.light .border-cyan-400\/30 {
-  border-color: rgba(99, 102, 241, 0.15) !important;
+.light .shadow-card {
+  box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Light mode terminal with professional colors */
+/* Light mode terminal background overrides */
+.light .bg-gray-900\/30 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  /* gray-200 */
+}
+
+.light .bg-black\/20 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  /* gray-100 */
+}
+
+/* Light mode terminal text overrides */
 .light .text-cyan-300 {
   color: #0891b2 !important;
 }
 
-.light .text-pink-300 {
+.light .text-pink-300,
+.light .text-pink-400 {
   color: #be185d !important;
 }
 
+/* pink-700 */
 .light .text-blue-300 {
   color: #2563eb !important;
 }
 
-.light .text-orange-300 {
+.light .text-orange-300,
+.light .text-orange-400 {
   color: #ea580c !important;
 }
 
-.light .text-green-300 {
-  color: #059669 !important;
+/* orange-600 */
+.light .text-green-300,
+.light .text-green-400 {
+  color: #15803d !important;
 }
 
-.light .text-purple-300 {
-  color: #7c3aed !important;
+/* green-700 */
+.light .text-purple-300,
+.light .text-purple-400 {
+  color: #7e22ce !important;
+}
+
+/* purple-700 */
+.light .text-yellow-300 {
+  color: #b45309 !important;
+}
+
+/* amber-700 */
+.light .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* slate-500 */
+.light .text-gray-300 {
+  color: #475569 !important;
+}
+
+/* slate-600 */
+
+/* Light mode miscellaneous overrides for visibility */
+.light .border-white\/10,
+.light .border-white\/5,
+.light .border-white\/20,
+.light .border-gray-700,
+.light .border-gray-800 {
+  border-color: #e2e8f0 !important;
+  /* slate-200 */
+}
+
+/* Enhanced Light Mode Card Shadow with Glow */
+.light .shadow-card {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .shadow-card:hover {
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(99, 102, 241, 0.2) !important;
+  /* Indigo glow on hover */
+}
+
+/* Ensure gradients that were white-to-transparent are visible helpers */
+.light .bg-gradient-to-r.from-white\/10 {
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.1), transparent) !important;
 }
 
 /* Light mode custom cursor with professional colors */
