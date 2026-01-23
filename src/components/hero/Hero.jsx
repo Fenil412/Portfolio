@@ -100,15 +100,15 @@ const Hero = () => {
             className="w-full max-w-2xl bg-gray-900/30 backdrop-blur-md rounded-lg border border-gray-700/50 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300 group hover:shadow-[0_0_50px_rgba(145,94,255,0.2)]"
           >
             {/* Window Header */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-gray-800/50 border-b border-gray-700/50">
+            <div className="flex items-center gap-2 px-4 py-3 bg-gray-200 dark:bg-gray-800/50 border-b border-gray-300 dark:border-gray-700/50">
               <div className="w-3 h-3 rounded-full bg-red-500/80 group-hover:bg-red-500 transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500/80 group-hover:bg-yellow-500 transition-colors"></div>
               <div className="w-3 h-3 rounded-full bg-green-500/80 group-hover:bg-green-500 transition-colors"></div>
-              <div className="ml-4 text-xs text-gray-400 font-mono">profile.js</div>
+              <div className="ml-4 text-xs text-gray-700 dark:text-gray-400 font-bold font-mono">profile.js</div>
             </div>
 
             {/* Code Content */}
-            <div className="p-6 font-mono text-sm overflow-x-auto h-[650px] overflow-y-hidden custom-scrollbar bg-black/20">
+            <div className="p-6 font-mono text-sm overflow-x-auto h-[650px] overflow-y-hidden custom-scrollbar bg-black/20 text-white">
               <div className="space-y-1">
                 <div className="opacity-50 text-gray-400">// My Profile</div>
                 <div>

@@ -23,7 +23,8 @@ const ProjectCard = ({
         tiltMaxAngleY={12}
         scale={1.03}
         transitionSpeed={450}
-        className="relative bg-black-200/40 backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_50px_rgba(145,94,255,0.4)] hover:-translate-y-2 group overflow-hidden"
+        // Explicitly using bg-white for Light Mode to match Education page brightness, dark:bg-[#151030] for Dark Mode
+        className="relative bg-white dark:bg-[#151030] backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-card hover:shadow-[0_0_50px_rgba(145,94,255,0.4)] hover:-translate-y-2 group overflow-hidden"
       >
         {/* Shine Effect - Enhanced */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 z-0 pointer-events-none" />
@@ -45,6 +46,7 @@ const ProjectCard = ({
             {source_code_link && (
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
+                // black-gradient maps to white gradient in light mode via css, keeping it or careful use
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transform hover:scale-110 transition-transform border border-white/10 hover:border-[#915eff] group/icon"
                 title="Source Code"
               >
@@ -94,6 +96,7 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5 relative z-10">
+          {/* Removed forced colors so it adapts: Dark Text in Light Mode, White in Dark Mode */}
           <h3 className="text-white font-bold text-[24px] group-hover:text-[#915eff] transition-colors duration-300 flex items-center gap-2">
             {name}
             {/* Status Pulse Dot */}
@@ -102,6 +105,7 @@ const ProjectCard = ({
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
           </h3>
+          {/* Removed forced colors */}
           <p className="mt-2 text-secondary text-[14px] leading-relaxed line-clamp-3">{description}</p>
         </div>
 
@@ -109,7 +113,8 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color} px-2 py-1 rounded-md bg-white/5 border border-white/5 hover:border-white/20 transition-colors`}
+              // Updated tag background: bg-gray-100 (Neutral Light) for Light Mode, bg-white/5 for Dark Mode
+              className={`text-[14px] ${tag.color} px-2 py-1 rounded-md bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-[#915eff] transition-colors`}
             >
               #{tag.name}
             </p>
@@ -137,11 +142,11 @@ const Works = () => {
           viewport={{ once: true }}
           className="text-center mb-16 relative"
         >
-          <p className="text-gray-400 text-lg uppercase tracking-wider">My work</p>
+          <p className="text-secondary text-lg uppercase tracking-wider">My work</p>
           <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block tracking-tight">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Projects</span>
           </h2>
-          <p className="mt-4 text-gray-300 text-[17px] max-w-3xl mx-auto leading-[30px]">
+          <p className="mt-4 text-secondary opacity-80 text-[17px] max-w-3xl mx-auto leading-[30px]">
             Following projects showcase my skills and experience through real-world
             examples. Each project is briefly described with links to code repositories
             and live demos. It reflects my ability to solve complex problems,

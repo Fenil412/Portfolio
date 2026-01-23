@@ -58,7 +58,7 @@ const SkillCard = ({ icon: Icon, title, skills, color, index }) => (
       <CardContent className="p-6 relative z-10 flex flex-col h-full">
         <div className="flex items-center gap-4 mb-6">
           <div
-            className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300 border border-white/5`}>
+            className={`p-3 rounded-xl bg-violet-50 dark:bg-white/20 ${color} group-hover:scale-110 transition-transform duration-300 border border-white/5`}>
             <Icon className="w-8 h-8" />
           </div>
           {/* Enhanced Title - Aware of Theme */}
@@ -207,10 +207,8 @@ const SkillsSection = () => {
           className="text-center mb-12"
         >
           <p className="text-gray-400 text-lg uppercase tracking-wider">My technical expertise</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block">
-            My <span className="text-[#915eff]">Skills.</span>
-            {/* Title Shine Effect */}
-            <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg opacity-0 animate-pulse text-transparent" aria-hidden="true" />
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Skills</span>
           </h2>
         </motion.div>
 

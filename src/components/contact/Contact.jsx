@@ -115,19 +115,19 @@ const Contact = () => {
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/fenil-chodvadiya",
+      url: "https://www.linkedin.com/in/fenil-chodvadiya-0b5298284/",
       color: "hover:text-blue-500"
     },
     {
       icon: FaGithub,
       name: "GitHub",
-      url: "https://github.com/fenilchodvadiya",
+      url: "https://github.com/Fenil412",
       color: "hover:text-gray-400"
     },
     {
       icon: FaTwitter,
       name: "Twitter",
-      url: "https://twitter.com/fenilchodvadiya",
+      url: "https://x.com/Fenil_412",
       color: "hover:text-blue-400"
     }
   ];
@@ -137,7 +137,9 @@ const Contact = () => {
       {/* Header Section */}
       <motion.div variants={textVariant()} className="text-center mb-16">
         <p className={`${styles.sectionSubText} text-center`}>Get in Touch</p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>Contact.</h2>
+        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight text-center">
+          Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Me</span>
+        </h2>
         <p className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto leading-[30px]">
           Have a project in mind or want to collaborate? I'd love to hear from you.
           Let's discuss how we can work together to bring your ideas to life.

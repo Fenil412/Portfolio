@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { profiles } from '../../constants';
-import { leetcode, codeforces, codechef, github, cpc } from '../../assets';
+import { leetcode, codeforces, codechef, github } from '../../assets';
 import Tilt from 'react-parallax-tilt';
 import { FaKaggle, FaCode, FaGithub } from 'react-icons/fa'; // Added FaGithub
 import { staggerContainer, fadeIn } from '../../utils/motion';
@@ -73,14 +73,20 @@ const Education = () => {
       description: "Solved ~785 problems | 2058 Rating | Knight Badge"
     },
     {
-      title: "Competitive Programming",
-      platforms: [
-        { name: "CodeForces", link: "https://codeforces.com/profile/Sagivian", icon: codeforces },
-        { name: "CodeChef", link: "https://www.codechef.com/users/sagivian", icon: codechef }
-      ],
-      icon: cpc, // Added CPC icon
-      color: "from-blue-500 to-cyan-400",
-      description: "Rated 'Pupil' (Max 1300) on Codeforces | 3★ Coder (1653) on CodeChef"
+      title: "CodeForces Profile",
+      platform: "CodeForces",
+      link: "https://codeforces.com/profile/Sagivian",
+      icon: codeforces,
+      color: "from-blue-500 to-cyan-500",
+      description: "Solved ~250 problems | Rated 'Pupil' (Max 1300) | Solving algorithmic challenges efficiently"
+    },
+    {
+      title: "CodeChef Profile",
+      platform: "CodeChef",
+      link: "https://www.codechef.com/users/sagivian",
+      icon: codechef,
+      color: "from-orange-500 to-yellow-600",
+      description: "3★ Coder (1653) | Regular contest participant & problem solver"
     },
     {
       title: "Git & GitHub Mastery",
@@ -155,7 +161,7 @@ const Education = () => {
 
                     <div className="relative z-10">
                       <div className="flex justify-between items-start mb-4">
-                        <span className="text-5xl opacity-20 transform -translate-y-2 -translate-x-2 absolute top-0 left-0">🎓</span>
+                        <span className="text-5xl transform -translate-y-2 -translate-x-2 absolute top-0 left-0">🎓</span>
                         <div className="ml-auto bg-[#915eff]/20 text-[#915eff] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
                           {edu.duration}
                         </div>
@@ -208,11 +214,18 @@ const Education = () => {
             Certifications <span className="text-[#915eff]">&</span> Continuous Learning
           </h3>
 
-          {/* Profiles Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* Profiles Grid - Animated One by One */}
+          <motion.div
+            variants={staggerContainer(0.1, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid md:grid-cols-3 gap-6 mb-12"
+          >
             {profilesData.map((profile, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeIn("up", "spring", index * 0.1, 0.5)}
                 className="relative bg-tertiary rounded-2xl p-[1px] overflow-hidden group hover:scale-[1.02] transition-all duration-300 shadow-card"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -253,13 +266,14 @@ const Education = () => {
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
 
-          {/* Certificates Grid - Staggered Animation to Match Projects */}
+          </motion.div>
+
+          {/* Certificates Grid - Faster Animation */}
           <motion.div
-            variants={staggerContainer(0.3, 0.2)}
+            variants={staggerContainer(0.1, 0.1)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
@@ -272,7 +286,7 @@ const Education = () => {
               {certificatesData.map((cert, index) => (
                 <motion.div
                   key={index}
-                  variants={fadeIn("up", "spring", index * 0.5, 1)}
+                  variants={fadeIn("up", "spring", index * 0.05, 0.4)}
                 >
                   <Tilt
                     tiltMaxAngleX={15}

@@ -75,7 +75,7 @@ const About = () => {
             variants={fadeIn('', '', 0.1, 1)}
             className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
           >
-            I'm a final-year Computer Science student at Nirma University (CGPA: 8.62) with a strong foundation in Data Structures & Algorithms. I have experience as a Web Developer Intern at Zidio Development, where I built scalable applications using the MERN stack. My expertise spans Full-Stack Development, Machine Learning, and Competitive Programming (Knight on LeetCode). I'm passionate about building fast, user-centric web apps and exploring AI-driven solutions.
+            I'm a final-year Computer Science student at Nirma University (CGPA: 8.63) with a strong foundation in Data Structures & Algorithms. I have experience as a Web Developer Intern at Zidio Development, where I built scalable applications using the MERN stack. My expertise spans Full-Stack Development, Machine Learning, and Competitive Programming (Knight on LeetCode). I'm passionate about building fast, user-centric web apps and exploring AI-driven solutions.
           </motion.p>
         </div>
       </div>

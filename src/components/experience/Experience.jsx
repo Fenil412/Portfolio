@@ -11,7 +11,7 @@ const Experience = () => {
     {
       title: "Student Placement Co-ordinator",
       company_name: "CSE Department Nirma University",
-      iconBg: "#383E56",
+      iconBg: "#E6DEDD",
       date: "Jan 2026 - Present",
       location: "Nirma University · Hybrid",
       icon: "🎓",
@@ -37,7 +37,7 @@ const Experience = () => {
     {
       title: "Core Committee Member",
       company_name: "Computer Society of India, Nirma University",
-      iconBg: "#383E56",
+      iconBg: "#E6DEDD",
       date: "Feb 2025 - Present",
       location: "Ahmedabad, Gujarat, India · On-site",
       icon: "👥",
@@ -63,7 +63,7 @@ const Experience = () => {
     {
       title: "Member",
       company_name: "Data Science Club, Nirma University",
-      iconBg: "#383E56",
+      iconBg: "#E6DEDD",
       date: "Oct 2024 - Present",
       location: "Ahmedabad, Gujarat, India · On-site",
       icon: "📊",
@@ -104,10 +104,8 @@ const Experience = () => {
         className="text-center mb-16 relative z-10"
       >
         <p className="text-gray-400 text-lg uppercase tracking-wider">What I have done so far</p>
-        <h2 className="text-4xl md:text-6xl font-bold text-white mt-2 relative inline-block">
-          Work <span className="text-[#915eff]">Experience.</span>
-          {/* Title Shine Effect */}
-          <span className="absolute -inset-1 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg opacity-0 animate-pulse text-transparent" aria-hidden="true" />
+        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Experience</span>
         </h2>
       </motion.div>
 

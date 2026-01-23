@@ -16,7 +16,6 @@ import codeforces from './codeforces.jpg'
 import codechef from './codechef.png'
 import leetcode from './leetcode.png'
 import kaggle from './kaggle.png'
-import cpc from './cpc.webp'
 
 
 import me from './ME_Image.jpeg'
@@ -41,7 +40,5 @@ export {
   codeforces,
   codechef,
   leetcode,
-  leetcode,
-  kaggle,
-  cpc
+  kaggle
 };
