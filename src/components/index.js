@@ -8,7 +8,7 @@ import Works from './Works';
 import Contact from './contact';
 import Profiles from './Profiles';
 import Skills from './skills';
-import Experience from './experience';
+import Experience from './experience/index';
 import Education from './education';
 import Projects from './projects';
 import CustomCursor from "./CustomCursor";

@@ -47,7 +47,7 @@ const services = [
 const profiles = [
     {
         testimonial:
-            "🌟 Solved ~785 problems | 2058 Rating | Regular contest participant. I use LeetCode to sharpen my DSA daily.",
+            "🌟 Solved ~810 problems | 2058 Rating | Regular contest participant. I use LeetCode to sharpen my DSA daily.",
         name: "LeetCode",
         profile_link: "https://leetcode.com/u/Sagivian/",
 

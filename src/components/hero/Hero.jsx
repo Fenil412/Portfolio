@@ -6,7 +6,7 @@ import { textVariant, staggerContainer, fadeIn } from "../../utils/motion";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto z-10 overflow-hidden`}>
+    <section className={`relative w-full min-h-screen mx-auto z-10 overflow-x-hidden`}>
       <div className="absolute inset-0 bg-hero-pattern bg-cover bg-no-repeat bg-center z-0" />
 
       {/* Animated Background Overlay */}
@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="w-full lg:w-[160%] h-[600px] sm:h-[800px] lg:h-[1200px] relative mt-20 lg:mt-10 ml-[-30px] lg:-ml-[30%] z-[60]"
+            className="w-full lg:w-[160%] h-[300px] sm:h-[400px] lg:h-[1200px] relative mt-2 lg:mt-10 ml-[-30px] lg:-ml-[30%] z-[60]"
           >
             <ComputersCanvas />
           </motion.div>
@@ -83,7 +83,7 @@ const Hero = () => {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="hidden lg:flex w-full lg:w-[40%] justify-center items-start mt-10 perspective-1000 relative z-50"
+          className="flex w-full lg:w-[40%] justify-center items-start mt-10 perspective-1000 relative z-50"
         >
           <motion.div
             animate={{
@@ -108,7 +108,7 @@ const Hero = () => {
             </div>
 
             {/* Code Content */}
-            <div className="p-6 font-mono text-sm overflow-x-auto h-[650px] overflow-y-hidden custom-scrollbar bg-black/20 text-white">
+            <div className="p-6 font-mono text-sm overflow-x-auto h-[350px] sm:h-[500px] lg:h-[650px] overflow-y-auto custom-scrollbar bg-black/20 text-white">
               <div className="space-y-1">
                 <div className="opacity-50 text-gray-400">// My Profile</div>
                 <div>
@@ -156,7 +156,7 @@ const Hero = () => {
                 </div>
                 <div className="pl-8">
                   <span className="text-blue-300">leetcode</span>:{" "}
-                  <span className="text-green-400">'Knight Badge | 785+ Problems | Top 2.5%'</span>,
+                  <span className="text-green-400">'Knight Badge | 810+ Problems | Top 2.5%'</span>,
                 </div>
                 <div className="pl-8">
                   <span className="text-blue-300">codeforces</span>:{" "}
