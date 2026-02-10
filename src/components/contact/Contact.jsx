@@ -63,8 +63,8 @@ const Contact = () => {
 
     setLoading(true);
     emailjs.send(
-      'service_kf2qf1f',
-      'template_61jscp9',
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
       {
         from_name: form.name,
         to_name: 'Fenil Chodvadiya',
@@ -72,12 +72,12 @@ const Contact = () => {
         to_email: 'chodvadiyafenil@gmail.com',
         message: form.message,
       },
-      '5yw4p9KV1U9y7hLao'
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     ).then(() => {
       // Send Auto-Reply
       emailjs.send(
-        'service_kf2qf1f',
-        'template_q3o770y',
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_AUTO_REPLY,
         {
           from_name: form.name,
           to_name: 'Fenil Chodvadiya',
@@ -85,7 +85,7 @@ const Contact = () => {
           to_email: 'chodvadiyafenil@gmail.com',
           message: form.message,
         },
-        '5yw4p9KV1U9y7hLao'
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       ).then(() => {
         setLoading(false);
         alert('Thank you! I will get back to you as soon as possible.');
