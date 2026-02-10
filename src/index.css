@@ -54,10 +54,17 @@
 }
 
 /* Ensure cursor is hidden on all elements */
-*,
+html, body, *,
 *::before,
 *::after {
   cursor: none !important;
+}
+
+/* Explicitly hide cursor on touch devices if they try to show it */
+@media (pointer: coarse) {
+  html, body, * {
+    cursor: none !important;
+  }
 }
 
 /* Hide cursor on interactive elements */

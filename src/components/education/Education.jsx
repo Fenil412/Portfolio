@@ -57,6 +57,7 @@ const Education = () => {
     { name: "Flipkart GRiD 6.0 (2024)", file: "/filpcart_page-0001.jpg", type: "image" },
     { name: "Hackout 2024", file: "/hackout_2024.jpg", type: "image" },
     { name: "SIH 2024", file: "/sih_page-0001.jpg", type: "image" },
+    { name: "SIH 2025-26", file: "/sih_2025-26.jpg", type: "image" },
     { name: "TATA Crucible Campus Quiz 2024", file: "/TATA Crucible Campus Quiz 2024.jpg", type: "image" },
     { name: "TATA Crucible Campus Quiz 2025", file: "/TATA Crucible Campus Quiz 2025.jpg", type: "image" },
     { name: "Webcube Tech (2024)", file: "/webcube tech certificatr_page-0001.jpg", type: "image" }

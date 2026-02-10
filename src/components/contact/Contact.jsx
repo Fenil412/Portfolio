@@ -85,8 +85,8 @@ const Contact = () => {
       setErrors({});
     }, (error) => {
       setLoading(false)
-      console.log(error);
-      alert('Something went wrong. Please try again.');
+      console.error("EmailJS Error:", error);
+      alert(`Something went wrong. Error: ${error.text || JSON.stringify(error)}`);
     })
   }
 
@@ -133,9 +133,9 @@ const Contact = () => {
   ];
 
   return (
-    <div className='min-h-screen py-20'>
+    <div className='min-h-screen py-10 md:py-20'>
       {/* Header Section */}
-      <motion.div variants={textVariant()} className="text-center mb-16">
+      <motion.div variants={textVariant()} className="text-center mb-8 md:mb-16">
         <p className={`${styles.sectionSubText} text-center`}>Get in Touch</p>
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight text-center">
           Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] to-[#00cea8] animate-pulse">Me</span>
@@ -146,7 +146,7 @@ const Contact = () => {
         </p>
       </motion.div>
 
-      <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+      <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-6 md:gap-10 overflow-hidden'>
         {/* Contact Form */}
         <motion.div
           variants={slideIn('left', "tween", 0.2, 1)}
@@ -269,7 +269,7 @@ const Contact = () => {
         {/* Earth Canvas */}
         <motion.div
           variants={slideIn('right', "tween", 0.2, 1)}
-          className='xl:flex-1 xl:h-auto md:h-[600px] h-[400px] xl:min-h-[700px]'
+          className='xl:flex-1 xl:h-auto md:h-[600px] h-[300px] xl:min-h-[700px]'
         >
           <EarthCanvas />
         </motion.div>

@@ -196,15 +196,15 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-24 lg:pt-16 text-white min-h-screen bg-primary relative overflow-hidden" id="skills">
+    <main className="pt-10 lg:pt-16 text-white min-h-screen bg-primary relative overflow-hidden" id="skills">
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
-      <section className="container mx-auto px-4 py-12 relative z-10">
+      <section className="container mx-auto px-4 py-8 md:py-12 relative z-10">
         <motion.div
           variants={textVariant()}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <p className="text-gray-400 text-lg uppercase tracking-wider">My technical expertise</p>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -217,7 +217,7 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center items-center mb-16"
+          className="flex justify-center items-center mb-8 md:mb-16"
         >
           <IconCloudDemo />
         </motion.div>

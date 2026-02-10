@@ -23,40 +23,43 @@ const CustomCursor = () => {
 
   // Device & Input Detection
   useEffect(() => {
-    const checkDevice = () => {
-      // Strict check: Hover must be supported AND pointer must be fine (mouse/trackpad)
-      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-      const hasHover = window.matchMedia("(hover: hover)").matches;
-      const isLargeScreen = window.innerWidth > 1024;
+    // Force enable on all devices as per user request
+    setIsMobile(false);
+    setIsVisible(true);
 
-      const shouldEnable = hasFinePointer && hasHover && isLargeScreen;
-
-      setIsMobile(!shouldEnable);
-      setIsVisible(shouldEnable);
-    };
-
-    checkDevice();
-    window.addEventListener('resize', checkDevice);
-
-    return () => window.removeEventListener('resize', checkDevice);
+    // Cleanup not needed for this simple state set, but keeping structure
+    return () => { };
   }, []);
 
   // Mouse Move Handler
   const handleMouseMove = useCallback((e) => {
-    if (isMobile) return;
     cursorX.set(e.clientX);
     cursorY.set(e.clientY);
-  }, [cursorX, cursorY, isMobile]);
+  }, [cursorX, cursorY]);
+
+  // Touch Move Handler
+  const handleTouchMove = useCallback((e) => {
+    if (e.touches.length > 0) {
+      cursorX.set(e.touches[0].clientX);
+      cursorY.set(e.touches[0].clientY);
+    }
+  }, [cursorX, cursorY]);
 
   // Event Listeners
   useEffect(() => {
-    if (isMobile) return; // Don't attach listeners on mobile
-
     let rafId;
     const throttledMouseMove = (e) => {
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         handleMouseMove(e);
+        rafId = null;
+      });
+    };
+
+    const throttledTouchMove = (e) => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleTouchMove(e);
         rafId = null;
       });
     };
@@ -92,8 +95,11 @@ const CustomCursor = () => {
     const handleWindowLeave = () => setIsVisible(false);
 
     window.addEventListener("mousemove", throttledMouseMove);
+    window.addEventListener("touchmove", throttledTouchMove); // Add touch listener
     window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("touchstart", handleMouseDown); // Add touch start
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchend", handleMouseUp); // Add touch end
 
     // Use capture phase for better event delegation
     document.addEventListener('mouseover', handleMouseEnter, true);
@@ -103,18 +109,22 @@ const CustomCursor = () => {
 
     return () => {
       window.removeEventListener("mousemove", throttledMouseMove);
+      window.removeEventListener("touchmove", throttledTouchMove);
       window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("touchstart", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchend", handleMouseUp);
       document.removeEventListener('mouseover', handleMouseEnter, true);
       document.removeEventListener('mouseout', handleMouseLeave, true);
       document.removeEventListener('mouseenter', handleWindowEnter);
       document.removeEventListener('mouseleave', handleWindowLeave);
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [handleMouseMove, isMobile]);
+  }, [handleMouseMove, handleTouchMove]);
 
   // Safety Return for Mobile
-  if (isMobile) return null;
+  // Safety Return for Mobile
+  // if (isMobile) return null; // Removed check to allow rendering on mobile
 
   // Theme Colors
   const colors = {

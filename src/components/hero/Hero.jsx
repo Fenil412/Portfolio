@@ -24,7 +24,7 @@ const Hero = () => {
       />
 
       <div
-        className={`absolute inset-0 top-[120px] max-w-[1600px] mx-auto ${styles.paddingX} flex flex-col lg:flex-row items-start justify-between gap-20 z-10`}
+        className={`absolute inset-0 top-[120px] max-w-[1600px] mx-auto ${styles.paddingX} flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-20 z-10`}
       >
         {/* Left Side - Intro & 3D Model */}
         <div className="flex flex-col w-full lg:w-[60%] h-full z-10">
@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="w-full lg:w-[160%] h-[300px] sm:h-[400px] lg:h-[1200px] relative mt-2 lg:mt-10 ml-[-30px] lg:-ml-[30%] z-[60]"
+            className="w-full lg:w-[160%] h-[250px] sm:h-[400px] lg:h-[1200px] relative mt-1 lg:mt-10 ml-[-30px] lg:-ml-[30%] z-[60]"
           >
             <ComputersCanvas />
           </motion.div>
