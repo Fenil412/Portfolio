@@ -63,8 +63,8 @@ const Contact = () => {
 
     setLoading(true);
     emailjs.send(
-      'service_h4ms0ae',
-      'template_6zw6f6v',
+      'service_kf2qf1f',
+      'template_61jscp9',
       {
         from_name: form.name,
         to_name: 'Fenil Chodvadiya',
@@ -72,7 +72,7 @@ const Contact = () => {
         to_email: 'chodvadiyafenil@gmail.com',
         message: form.message,
       },
-      'xnyWmkrmoed0PVBti'
+      '5yw4p9KV1U9y7hLao'
     ).then(() => {
       setLoading(false);
       alert('Thank you! I will get back to you as soon as possible.');

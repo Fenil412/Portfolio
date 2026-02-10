@@ -24,10 +24,10 @@ const Hero = () => {
       />
 
       <div
-        className={`absolute inset-0 top-[120px] max-w-[1600px] mx-auto ${styles.paddingX} flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-20 z-10`}
+        className={`absolute inset-0 top-[120px] max-w-[1600px] mx-auto ${styles.paddingX} flex flex-col xl:flex-row items-start justify-between gap-10 xl:gap-20 z-10`}
       >
         {/* Left Side - Intro & 3D Model */}
-        <div className="flex flex-col w-full lg:w-[60%] h-full z-10">
+        <div className="flex flex-col w-full xl:w-[60%] h-full z-10">
           <motion.div
             variants={staggerContainer(0.1, 0)}
             initial="hidden"
@@ -53,13 +53,13 @@ const Hero = () => {
             <div className="z-10">
               <motion.h1
                 variants={textVariant(0.5)}
-                className={`${styles.heroHeadText} text-white !text-[30px] sm:!text-[50px] lg:!text-[80px] lg:!leading-[90px]`}
+                className={`${styles.heroHeadText} text-white !text-[30px] sm:!text-[50px] xl:!text-[80px] xl:!leading-[90px]`}
               >
                 Hi, I'm <span className='text-[#915EFF] inline-block hover:scale-105 transition-transform duration-300'>Fenil Chodvadiya</span>
               </motion.h1>
               <motion.p
                 variants={fadeIn("right", "tween", 1, 1)}
-                className={`${styles.heroSubText} mt-2 text-white-100 !text-[14px] sm:!text-[20px] lg:!text-[30px]`}
+                className={`${styles.heroSubText} mt-2 text-white-100 !text-[14px] sm:!text-[20px] xl:!text-[30px]`}
               >
                 I develop innovative web applications <br className='sm:block hidden' />
                 and solve complex problems through code
@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="w-full lg:w-[160%] h-[250px] sm:h-[400px] lg:h-[1200px] relative mt-1 lg:mt-10 ml-[-30px] lg:-ml-[30%] z-[60]"
+            className="w-full xl:w-[160%] h-[250px] sm:h-[400px] md:h-[600px] xl:h-[1200px] relative mt-1 xl:mt-10 ml-[-30px] xl:-ml-[30%] z-[60]"
           >
             <ComputersCanvas />
           </motion.div>
@@ -83,7 +83,7 @@ const Hero = () => {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="flex w-full lg:w-[40%] justify-center items-start mt-10 perspective-1000 relative z-50"
+          className="flex w-full xl:w-[40%] justify-center items-start mt-10 perspective-1000 relative z-50"
         >
           <motion.div
             animate={{
@@ -108,7 +108,7 @@ const Hero = () => {
             </div>
 
             {/* Code Content */}
-            <div className="p-6 font-mono text-sm overflow-x-auto h-[350px] sm:h-[500px] lg:h-[650px] overflow-y-auto custom-scrollbar bg-black/20 text-white">
+            <div className="p-6 font-mono text-sm overflow-x-auto h-[350px] sm:h-[500px] xl:h-[650px] overflow-y-auto custom-scrollbar bg-black/20 text-white">
               <div className="space-y-1">
                 <div className="opacity-50 text-gray-400">// My Profile</div>
                 <div>
