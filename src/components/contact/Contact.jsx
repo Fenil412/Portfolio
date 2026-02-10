@@ -74,15 +74,29 @@ const Contact = () => {
       },
       '5yw4p9KV1U9y7hLao'
     ).then(() => {
-      setLoading(false);
-      alert('Thank you! I will get back to you as soon as possible.');
+      // Send Auto-Reply
+      emailjs.send(
+        'service_kf2qf1f',
+        'template_q3o770y',
+        {
+          from_name: form.name,
+          to_name: 'Fenil Chodvadiya',
+          from_email: form.email,
+          to_email: 'chodvadiyafenil@gmail.com',
+          message: form.message,
+        },
+        '5yw4p9KV1U9y7hLao'
+      ).then(() => {
+        setLoading(false);
+        alert('Thank you! I will get back to you as soon as possible.');
 
-      setform({
-        name: '',
-        email: '',
-        message: '',
+        setform({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setErrors({});
       });
-      setErrors({});
     }, (error) => {
       setLoading(false)
       console.error("EmailJS Error:", error);
