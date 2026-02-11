@@ -23,7 +23,7 @@ const ProjectCard = ({
         tiltMaxAngleY={12}
         scale={1.03}
         transitionSpeed={450}
-        className="relative bg-black-200/40 backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_50px_rgba(145,94,255,0.4)] hover:-translate-y-2 group overflow-hidden"
+        className="relative bg-white dark:bg-black-200/40 backdrop-blur-xl p-5 rounded-2xl sm:w-[360px] w-full border border-gray-200 dark:border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-card hover:shadow-[0_0_50px_rgba(145,94,255,0.4)] hover:-translate-y-2 group overflow-hidden"
       >
         {/* Shine Effect - Enhanced */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 z-0 pointer-events-none" />
@@ -94,7 +94,7 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5 relative z-10">
-          <h3 className="text-white font-bold text-[24px] group-hover:text-[#915eff] transition-colors duration-300 flex items-center gap-2">
+          <h3 className="text-gray-900 dark:text-white font-bold text-[24px] group-hover:text-[#915eff] transition-colors duration-300 flex items-center gap-2">
             {name}
             {/* Status Pulse Dot */}
             <span className="flex h-3 w-3 relative">
@@ -109,7 +109,7 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color} px-2 py-1 rounded-md bg-white/5 border border-white/5 hover:border-white/20 transition-colors`}
+              className={`text-[14px] ${tag.color} px-2 py-1 rounded-md bg-gray-100 dark:bg-white/5 border border-gray-400 dark:border-white/20 hover:border-[#915eff] transition-colors`}
             >
               #{tag.name}
             </p>
