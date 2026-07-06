@@ -114,8 +114,8 @@ const Contact = () => {
     {
       icon: FaPhone,
       title: "Phone",
-      value: "+91 12345 67890",
-      link: "tel:+911234567890"
+      value: "+91 99133 12353",
+      link: "tel:+919913312353"
     },
     {
       icon: FaMapMarkerAlt,
